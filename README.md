@@ -4,17 +4,90 @@ This repository contains a hands-on TypeScript training project for learning fun
 
 The runnable code lives in `code/`. Inside that folder you will find lesson-by-lesson exercises, tests, sample data, and reference solutions built with TypeScript, Jest, `fp-ts`, `effect`, and `ts-pattern`.
 
+## 3-Day Course Outline
+
+### Day 1: FP Fundamentals
+
+Build a strong foundation in FP thinking, expression-oriented code, and function-based design.
+
+| Topic | Description |
+| --- | --- |
+| Introduction to Functional Programming | Programming paradigm, Lambda Calculus, declarative vs. imperative style |
+| FP Syntax in TypeScript | Functions, generics, union types, readonly, immutability |
+| Function | Pure functions, total functions, domain & co-domain, side effects |
+| Function Composition | `compose`, `pipe`, `flow` — chaining transformations |
+| Problem Solving | Breakdown with pure functions, function-level reasoning |
+| Higher-Order Functions & Lambda Calculus | Functions as values, lambda abstraction, referential transparency |
+| Currying | Partial application, converting binary to unary functions |
+| Recursion | Recursive structures, `map`, `foldr`/`foldl`, linked list, tree, quicksort |
+
+**Labs:** `00-TypeScript`, `01-Function&Compose`, `02-Problem-Solving`, `03-Currying`, `04-Recursion`
+
+---
+
+### Day 2: Modeling and Effects
+
+Learn how to model business domains, handle absence and errors, manage side effects, and compose asynchronous workflows.
+
+| Topic | Description |
+| --- | --- |
+| Types | Domain modeling with types, `NonEmptyArray`, compile-time guarantees |
+| Option | `Some` / `None` — representing absence without `null` |
+| Either | `Left` / `Right` — error-aware computations and Railway-Oriented Programming |
+| ADT & Pattern Matching | Sum types, product types, exhaustive pattern matching with `ts-pattern` |
+| Higher-Kinded Types | Kinds, type constructors, abstracting over `F<A>` |
+| IO & IOEither | Modeling synchronous side effects as pure values |
+| Task & TaskEither | Async side effects, composing `Promise`-based workflows |
+| Put It All Together | End-to-end exercise: summarize employee work hours from CSV data |
+
+**Labs:** `05-Types`, `06-Option`, `07-Either`, `08-PatternMatching`, `09-IO`, `10-Task`, `11-Exercise`
+
+---
+
+### Day 3: Type Classes and Abstractions
+
+Understand the abstractions that make FP powerful, reusable, and composable — rooted in Category Theory.
+
+| Topic | Description |
+| --- | --- |
+| Category Theory | Category, composition, identity, endofunctor, natural transformation, Kleisli |
+| Type Class | Ad hoc polymorphism, parametric polymorphism, `Eq`, `Ord` |
+| Magma, Semigroup, Monoid | Combining values with associativity and identity |
+| Functor | `fmap` — mapping over contextual values; identity and composition laws |
+| Applicative Functor | `pure` / `ap` — applying wrapped functions, independent validations |
+| Monad | `flatMap` / `bind` — sequencing context-dependent computations |
+**Labs:** `12-CategoryTheory`, `13-TypeClass`, `14-Monoid`, `15-Functor`, `16-Applicative`, `17-Monads`
+
+---
+
 ## Project Layout
 
 ```text
 .
 ├── README.md
+├── FP-TypeScript Day1.pdf
+├── FP-TypeScript Day2.pdf
+├── FP-TypeScript Day3.pdf
 └── code
     ├── package.json
     ├── src
     │   ├── 00-TypeScript
     │   ├── 01-Function&Compose
-    │   ├── ...
+    │   ├── 02-Problem-Solving
+    │   ├── 03-Currying
+    │   ├── 04-Recursion
+    │   ├── 05-Types
+    │   ├── 06-Option
+    │   ├── 07-Either
+    │   ├── 08-PatternMatching
+    │   ├── 09-IO
+    │   ├── 10-Task
+    │   ├── 11-Exercise
+    │   ├── 12-CategoryTheory
+    │   ├── 13-TypeClass
+    │   ├── 14-Monoid
+    │   ├── 15-Functor
+    │   ├── 16-Applicative
     │   └── 17-Monads
     ├── jest.config.js
     └── tsconfig.json
@@ -89,34 +162,34 @@ Recommended workflow:
 
 ## Learning Modules
 
-The `code/src` directory is organized as a sequence of lessons:
+The `code/src` directory is organized as a sequence of lessons aligned with the 3-day agenda:
 
-| Module | Topic |
-| --- | --- |
-| `00-TypeScript` | TypeScript warm-up |
-| `01-Function&Compose` | Function composition, `compose`, `pipe`, and effects |
-| `02-Problem-Solving` | Solving problems in a functional style |
-| `03-Types` | Modeling with types |
-| `04-Currying` | Currying and partial application |
-| `05-Recursion` | Recursion, fold, map, linked lists, trees, and quicksort |
-| `06-Option` | Optional values and safe composition |
-| `07-Either` | Error-aware computations with `Either` |
-| `08-PatternMatching` | Pattern matching with algebraic data |
-| `09-TypeClass` | Ad hoc polymorphism, parametric thinking, and equality |
-| `10-IO` | Delaying and modeling effects with `IO` |
-| `11-Task` | Async functional effects with `TaskEither` and `effect` |
-| `12-Exercise` | End-to-end exercise: summarize workdays from CSV data |
-| `13-CategoryTheory` | Basic category theory concepts in code |
-| `14-Monoid` | Combining values with identity |
-| `15-Functor` | Mapping over contextual values |
-| `16-Applicative` | Applying wrapped functions and validation patterns |
-| `17-Monads` | Sequencing context-dependent computations |
+| Module | Day | Topic |
+| --- | --- | --- |
+| `00-TypeScript` | 1 | TypeScript warm-up: types, generics, readonly, union types |
+| `01-Function&Compose` | 1 | Function composition — `compose`, `pipe`, `flow`, and effects |
+| `02-Problem-Solving` | 1 | Problem breakdown and solving in a functional style |
+| `03-Currying` | 1 | Currying and partial application |
+| `04-Recursion` | 1 | Recursion, `foldr`/`foldl`, `map`, linked lists, trees, and quicksort |
+| `05-Types` | 2 | Modeling with types — business domain, `NonEmptyArray`, type safety |
+| `06-Option` | 2 | Optional values with `Some` / `None` — safe composition without `null` |
+| `07-Either` | 2 | Error-aware computations with `Left` / `Right` |
+| `08-PatternMatching` | 2 | ADT and exhaustive pattern matching with `ts-pattern` |
+| `09-IO` | 2 | Modeling synchronous side effects with `IO` and `IOEither` |
+| `10-Task` | 2 | Async functional effects with `TaskEither` and `effect` |
+| `11-Exercise` | 2 | End-to-end exercise: summarize workdays from CSV data |
+| `12-CategoryTheory` | 3 | Category theory concepts — composition, identity, endofunctor |
+| `13-TypeClass` | 3 | Type classes — ad hoc polymorphism, `Eq`, parametric thinking |
+| `14-Monoid` | 3 | Magma, Semigroup, and Monoid — combining values with identity |
+| `15-Functor` | 3 | Functor — `fmap`, identity law, composition law |
+| `16-Applicative` | 3 | Applicative Functor — `pure`, `ap`, independent validations |
+| `17-Monads` | 3 | Monad — `flatMap`, sequencing context-dependent computations |
 
 ## Notable Practice Files
 
 - `code/src/app.ts` is a simple runnable entry point for quick experiments.
-- `code/src/12-Exercise` contains a larger CSV-based exercise with `begin`, `lab`, and `solution` flows.
-- `code/src/11-Task/solution/jsonplaceholder.http` can be used to manually inspect the sample HTTP endpoint used in the async examples.
+- `code/src/11-Exercise` contains a larger CSV-based exercise with `begin`, `lab`, and `solution` flows.
+- `code/src/10-Task/solution/jsonplaceholder.http` can be used to manually inspect the sample HTTP endpoint used in the async examples.
 
 ## Main Libraries Used
 
