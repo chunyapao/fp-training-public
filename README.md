@@ -107,6 +107,7 @@ Check that everything is working:
 ```bash
 npm run dev
 npm test
+npm run test:watch
 ```
 
 Build the project:
