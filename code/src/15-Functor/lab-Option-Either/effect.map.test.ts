@@ -1,21 +1,15 @@
-import { some, none, map } from 'effect/Option'
-import { pipe } from 'effect/Function'
+import { pipe } from "effect/Function";
+import { map, none, some } from "effect/Option";
 
-const strLength = (x: string) => x.length
-const increment = (x: number) => x + 1
+const strLength = (x: string) => x.length;
+const increment = (x: number) => x + 1;
 
-describe('Map with fp-ts', () => {
-  it('should be able to compose strLength and increment with map', () => {
-    expect(
-      pipe(
-        some('abcd'), map(strLength), map(increment)
-      )
-    ).toEqual(some(5))
+// Lab 4: map from Effect -----------------------
 
-    expect(
-      pipe(
-        none(), map(strLength), map(increment)
-      )
-    ).toEqual(none())
-  })
-})
+describe("Map with Effect", () => {
+  it("should be able to compose strLength and increment with map", () => {
+    expect(pipe(some("abcd"), map(strLength), map(increment))).toEqual(some(5));
+
+    expect(pipe(none(), map(strLength), map(increment))).toEqual(none());
+  });
+});
